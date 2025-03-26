@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Zbiory Julii</title>
+		<script type="module" src="/artgorytm/js/julia_aa.js"></script>
+		<script type="module" src="/artgorytm/js/script.js"></script>
+        <script type="module" src="/artgorytm/js/patterns.js"></script>
+		<link rel="stylesheet" href="/artgorytm/css/patterns_style.css" />
+		<link rel="stylesheet" href="/artgorytm/css/scrollbar.css" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+		/>
+		<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+	</head>
+
+<body>
+    <!-- Modal Help Pop-up -->
+		<div id="helpModal" class="modal">
+			<div class="modal-content">
+				<!-- Close Icon -->
+				<span class="material-icons close-icon" id="closeModal">close</span>
+				<!-- Modal Pages Container -->
+				<div class="modal-pages-container">
+					<div class="modal-page active" id="page1">
+						<h2>Witaj w panelu samouczka!</h2>
+						<p>
+							Krótko przedstawimy kilka funkcji, które pomogą Ci stworzyć własną
+							grafikę.
+						</p>
+						<p>
+							Jeśli zapomnisz, co zrobić, zawsze możesz przejrzeć te treści w
+							panelu <b>Pomoc</b>
+							<span class="material-icons help-icon">help</span> w prawym dolnym
+							rogu. Jeżeli chcesz wrócić do strony wyboru algorytmu, kliknij
+							przycisk <b>Powrót</b> w prawym górnym rogu.
+						</p>
+						<p>Baw się dobrze!</p>
+					</div>
+					<div class="modal-page" id="page2">
+						<h2>Dostosuj parametry</h2>
+						<p>
+							Dla każdego algorytmu będziesz mieć wiele parametrów, które możesz
+							dostosować.
+						</p>
+						<p>
+							Użyj suwaków, aby dostosować parametry i zobaczyć, jak wzór
+							zmienia się w czasie rzeczywistym.
+						</p>
+						<p>
+							Aby dostosować parametr z listy, kliknij na nią i wybierz wartość
+							w menu rozwijanym.
+						</p>
+					</div>
+					<div class="modal-page" id="page3">
+						<h2>Zapisz lub udostępnij</h2>
+						<p>
+							Wygenerowane wzory możesz zapisać w Mojej Galerii po zalogowaniu, pobrać
+                            w plikach PNG, JPG lub SVG po wybraniu z listy rozwijanej albo udostępnić je bezpośrednio w
+							mediach społecznościowych.
+						</p>
+					</div>
+				</div>
+
+				<!-- Navigation Buttons -->
+				<div class="modal-navigation">
+					<button id="prevButton" disabled>Poprzednia</button>
+					<button id="nextButton">Następna</button>
+				</div>
+
+				<!-- Footer with "Don't show again" checkbox -->
+				<div class="modal-footer">
+					<label>
+						<input type="checkbox" id="dontShowAgain" /> Nie pokazuj następnym
+						razem
+					</label>
+				</div>
+			</div>
+		</div>
+    <div class="container">
+<div id="leftSide">
+    <canvas id="gl-canvas" width="650" height="650">
+        Oops ... Twoja przeglądarka nie wspiera elementu canvas z HTML5.
+    </canvas>
+    <div class="citation">
+        Przykład zbiorów Julii generowanych z pomocą procesu iteracyjnego przedstawionego w:<br>
+        <a class="link" href="https://doi.org/10.1016/j.chaos.2022.112540">
+        <strong>Kumari, S., Gdawiec, K., Nandal, A., Postolache, M., Chugh, R.: </strong>
+        A Novel Approach to Generate Mandelbrot Sets, Julia Sets and Biomorphs via Viscosity Approximation Method
+        <em>. Chaos, Solitons</em> Fractals 163, 112540, (2022)</a>
+    </div>
+</div>
+
+<div id="rightSide">
+    <fieldset>
+    <legend>Parametry zbioru Julii</legend>
+    <div class="slider-container">
+    <label for="nSlider">Stopień funkcji:</label>
+    <input id="nSlider" type="range" min="2" max="10" value="5" />
+    <output id="nValue" ></output>
+</div>
+
+
+    <fieldset>
+        <legend>Parameter r:</legend>
+        <div class="slider-container">
+        <label for="reCSlider">Re(r):</label>
+        <input id="reCSlider" type="range" min="-1.0" max="1.0" step="0.01" value="-0.01" />
+        <output id="reCValue" ></output>
+    </div>
+        
+    <div class="slider-container">
+        <label for="imCSlider">Im(r):</label>
+        <input id="imCSlider" type="range" min="-1.0" max="1.0" step="0.01" value="0.08" />
+        <output id="imCValue" ></output>
+    </div>
+    </fieldset>
+
+    <fieldset>
+        <div class="slider-container">
+    <label for="alphaSlider">Alfa:</label>
+    <input id="alphaSlider" type="range" min="0.0" max="1.0" step="0.01" value="0.1" />
+    <output id="alphaValue" ></output>
+</div>
+</fieldset>
+    
+
+    <div class="slider-container">
+    <label for="KSlider">Maksymalna liczba iteracji:</label>
+    <input id="KSlider" type="range" min="5" max="50" value="30" />
+    <output id="KValue" ></output>
+</div>
+
+    <fieldset>
+        <legend>Kolorystyka</legend>
+        <label for="colormap">Mapa kolorów:</label>
+        <select id="colormap">
+        </select>
+
+        <br><br>
+        <div class="slider-container">
+        <label for="exponentSlider">Dostosowanie mapy kolorów:</label>
+        <input id="exponentSlider" type="range" min="0.1" max="1.0" step="0.01" value="1.0" />
+        <output id="exponentValue" ></output>
+    </div>
+    </fieldset>
+
+    </fieldset>
+    <fieldset>
+        <div id="saveOptions">
+            <label for="imageFormat">Zapisz jako:</label>
+            <select id="imageFormat">
+                <option value="png">PNG</option>
+                <option value="jpg">JPG</option>
+                <option value="svg">SVG</option>
+            </select>
+            <button class="function-button" id="saveButton">
+                Zapisz obraz
+            </button>
+            <button class="function-button" id="shareButton">
+                Udostępnij obraz
+            </button>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Udostępnij do Galerii</legend>
+        <form id="galleryForm">
+            <label for="imageName">Nazwa obrazu:</label>
+            <input type="text" id="imageName" name="imageName" required />
+            <br /><br />
+            <label for="imageDescription">Opis (opcjonalnie):</label>
+            <textarea id="imageDescription" name="imageDescription"></textarea>
+            <br /><br />
+            <button type="button" id="shareToGalleryButton">
+                Udostępnij do Galerii
+            </button>
+        </form>
+    </fieldset>
+</div>
+</div>
+<div class="back-button-container">
+    <a href="/artgorytm/html/edytor.html" class="back-button">Powrót</a>
+</div>
+<span class="material-icons help-button" id="helpIcon">help</span>
+</body>
+</html>
+

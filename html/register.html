@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="/artgorytm/js/navbar.js"></script>
+    <title>Rejestracja</title>
+</head>
+<body>
+    <div id="navbar-container"></div>
+    <nav id="mobile-navbar">
+        <div class="mobile-logo">
+            <a href="https://us.edu.pl/">
+                <img src="/artgorytm/assets/images/us_mobile.png" alt="Logo">
+            </a>
+        </div>
+        <button id="menu-toggle" class="menu-button">☰</button>
+        <div id="menu-items" class="menu-hidden">
+            <a href="/artgorytm/index.html">STRONA GŁÓWNA</a>
+            <a href="/artgorytm/html/about.html">O APLIKACJI</a>
+            <a href="/artgorytm/html/my_gallery.html">MOJA GALERIA</a>
+            <a href="/artgorytm/html/edytor.html">EDYTOR</a>
+            <a id="login-logout-link" href="/artgorytm/html/login.html">ZALOGUJ SIĘ</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="content">
+            <div class="text">
+                <!-- Error message div -->
+                <div id="error-message" class="error-message"></div>
+                
+                <!-- Registration Form -->
+                <form id="register-form" class="register-form">
+                    <h1>Rejestracja</h1>
+                    <p>Zarejestruj się, aby uzyskać dostęp do pełnych funkcji aplikacji.</p>
+                    <div class="form-group">
+                        <label for="username">Nazwa użytkownika:</label>
+                        <input type="text" id="username" name="username" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Hasło:</label>
+                        <input type="password" id="password" name="password" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-password">Potwierdź hasło:</label>
+                        <input type="password" id="confirm-password" name="confirm-password" required />
+                    </div>
+                    <button type="submit" class="button">Zarejestruj się</button>
+                </form>
+                <div class="cta">
+                    <p>Masz już konto? <a href="login.html">Zaloguj się</a></p>
+                </div>
+            </div>
+            <div class="image">
+                <img
+                    class="image-hero"
+                    src="../assets/images/rybkinbg.png"
+                    alt="Graphic inspired by M.C. Escher"
+                />
+                <p>
+                    Praca graficzna inspirowana twórczością Mauritsa Cornelisa Eschera |
+                    Obraz wygenerowany przez Krzysztofa Gdawca
+                </p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 Uniwersytet Śląski</p>
+    </footer>
+    
+    <script src="../js/register.js"></script> <!-- Include JavaScript file -->
+</body>
+</html>

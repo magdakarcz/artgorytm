@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" /> 
+    <title>Logowanie</title>
+</head>
+<body>
+    <div id="navbar-container"></div>
+    <nav id="mobile-navbar">
+        <div class="mobile-logo">
+            <a href="https://us.edu.pl/">
+                <img src="/artgorytm/assets/images/us_mobile.png" alt="Logo">
+            </a>
+        </div>
+        <button id="menu-toggle" class="menu-button">☰</button>
+        <div id="menu-items" class="menu-hidden">
+            <a href="/artgorytm/index.html">STRONA GŁÓWNA</a>
+            <a href="/artgorytm/html/about.html">O APLIKACJI</a>
+            <a href="/artgorytm/html/my_gallery.html">MOJA GALERIA</a>
+            <a href="/artgorytm/html/edytor.html">EDYTOR</a>
+            <a id="login-logout-link" href="/artgorytm/html/login.html">ZALOGUJ SIĘ</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="content">
+            <div class="text">
+                <!-- Error message div -->
+                <div id="error-message" class="error-message"></div>
+                
+                <!-- Form with id for JavaScript handling -->
+                <form id="login-form" class="login-form">
+                    <h1>Logowanie</h1>
+                    <p>Zaloguj się, aby uzyskać dostęp do pełnych funkcji aplikacji.</p>
+                    <div class="form-group">
+                        <label for="username">Nazwa użytkownika:</label>
+                        <input type="text" id="username" name="username" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Hasło:</label>
+                        <input type="password" id="password" name="password" required />
+                    </div>
+                    <button type="submit" class="button">Zaloguj się</button>
+                </form>
+                <div class="cta">
+                    <p>Nie masz jeszcze konta? <a href="../html/register.html">Zarejestruj się</a></p>
+                </div>
+            </div>
+            <div class="image">
+                <img
+                    class="image-hero"
+                    src="../assets/images/rybkinbg.png"
+                    alt="Graphic inspired by M.C. Escher"
+                />
+                <p>
+                    Praca graficzna inspirowana twórczością Mauritsa Cornelisa Eschera |
+                    Obraz wygenerowany przez Krzysztofa Gdawca
+                </p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 Uniwersytet Śląski</p>
+    </footer>
+    <script>
+        fetch('/artgorytm/components/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-container').innerHTML = data;
+                initializeNavbar(); // Call a function to initialize the navbar script
+            });
+    
+        function initializeNavbar() {
+            const loginLogoutLink = document.getElementById('login-logout-link');
+            const userInfo = document.getElementById('user-info');
+    
+            // Check if the user is logged in
+            const username = sessionStorage.getItem('username');
+            const isLoggedIn = username !== null;
+    
+            if (isLoggedIn) {
+                // Display the user's name
+                userInfo.textContent = `Witaj ${username}!`;
+                userInfo.style.display = 'inline';
+    
+                // Change the link text to "Wyloguj"
+                loginLogoutLink.textContent = 'WYLOGUJ';
+                loginLogoutLink.href = '#';
+    
+                // Add logout functionality
+                loginLogoutLink.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    sessionStorage.removeItem('username');
+                    window.location.href = '/artgorytm/html/login.html';
+                });
+            } else {
+                // Hide the user info
+                userInfo.style.display = 'none';
+    
+                // Change the link text to "Zaloguj się"
+                loginLogoutLink.textContent = 'ZALOGUJ SIĘ';
+                loginLogoutLink.href = '/artgorytm/html/login.html';
+            }
+        }
+    </script>
+    <script src="../js/login.js"></script>
+</body>
+</html>

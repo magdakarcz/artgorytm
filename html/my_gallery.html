@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Moja Galeria</title>
+		<link rel="stylesheet" href="/artgorytm/css/style.css" />
+		<link rel="stylesheet" href="/artgorytm/css/scrollbar.css" />
+		<script src="/artgorytm/js/navbar.js"></script>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<div id="navbar-container"></div>
+		<nav id="mobile-navbar">
+			<div class="mobile-logo">
+				<a href="https://us.edu.pl/">
+					<img src="/artgorytm/assets/images/us_mobile.png" alt="Logo">
+				</a>
+			</div>
+			<button id="menu-toggle" class="menu-button">☰</button>
+			<div id="menu-items" class="menu-hidden">
+				<a href="/artgorytm/index.html">STRONA GŁÓWNA</a>
+				<a href="/artgorytm/html/about.html">O APLIKACJI</a>
+				<a href="/artgorytm/html/my_gallery.html">MOJA GALERIA</a>
+				<a href="/artgorytm/html/edytor.html">EDYTOR</a>
+				<a id="login-logout-link" href="/artgorytm/html/login.html">ZALOGUJ SIĘ</a>
+			</div>
+		</nav>
+		<div class="container">
+			<h1>Moja Galeria</h1>
+			<div id="gallery-container">
+				<!-- Images will be dynamically loaded here -->
+			</div>
+		</div>
+<!-- Modal for displaying larger image and details -->
+<div id="image-modal">
+    <span class="close-modal">&times;</span>
+    <div class="modal-content">
+        <img id="modal-image" src="" alt="">
+        <h3 id="modal-title"></h3>
+        <p id="modal-description"></p>
+        <p><strong>Data utworzenia:</strong> <span id="modal-date"></span> o <span id="modal-time"></span></p>
+        <p><strong>Użyty algorytm:</strong> <span id="modal-algorithm"></span></p>
+    </div>
+</div>
+
+		<script>
+// Fetch and display gallery images
+async function loadGallery() {
+    try {
+        // Add a cache-busting query parameter to force a fresh fetch
+        const response = await fetch(`/artgorytm/php/fetch_gallery.php?${new Date().getTime()}`);
+        console.log("Response status:", response.status); // Log the response status
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log("Fetched data:", data); // Log the fetched data
+
+        const galleryContainer = document.getElementById("gallery-container");
+        galleryContainer.innerHTML = ""; // Clear previous content
+
+        if (data.success) {
+            // Display images
+            data.images.forEach(image => {
+                const imageCard = document.createElement("div");
+                imageCard.className = "image-card";
+
+                const imageElement = document.createElement("img");
+                imageElement.src = image.image_data;
+                imageElement.alt = image.image_name;
+
+                const imageName = document.createElement("h3");
+                imageName.textContent = image.image_name;
+
+                const imageDescription = document.createElement("p");
+                imageDescription.textContent = image.description || "Brak opisu.";
+
+                // Add click event to open modal
+                imageCard.addEventListener("click", () => openModal(image));
+
+                imageCard.appendChild(imageElement);
+                imageCard.appendChild(imageName);
+                imageCard.appendChild(imageDescription);
+
+                galleryContainer.appendChild(imageCard);
+            });
+        } else {
+            // Display message if no images or user is not logged in
+            const message = document.createElement("p");
+            message.textContent = data.message;
+            message.style.textAlign = "center";
+            message.style.fontSize = "1.2em";
+            message.style.color = "#666";
+            galleryContainer.appendChild(message);
+        }
+    } catch (error) {
+        console.error("Error loading gallery:", error);
+        alert("Wystąpił błąd podczas ładowania galerii.");
+    }
+}
+
+// Load gallery when the page loads
+window.onload = loadGallery;
+
+
+			// Open modal with image details
+			function openModal(image) {
+				const modal = document.getElementById("image-modal");
+				const modalImage = document.getElementById("modal-image");
+				const modalTitle = document.getElementById("modal-title");
+				const modalDescription = document.getElementById("modal-description");
+				const modalDate = document.getElementById("modal-date");
+				const modalTime = document.getElementById("modal-time");
+				const modalAlgorithm = document.getElementById("modal-algorithm");
+
+				modalImage.src = image.image_data;
+				modalTitle.textContent = image.image_name;
+				modalDescription.textContent = image.description || "Brak opisu.";
+				modalDate.textContent = image.created_date; // Date of creation
+				modalTime.textContent = image.created_time; // Time of creation
+				modalAlgorithm.textContent = image.algorithm_name; // Used algorithm
+
+				modal.classList.add("active");
+			}
+
+			// Close modal
+			function closeModal() {
+				const modal = document.getElementById("image-modal");
+				modal.classList.remove("active");
+			}
+
+			// Close modal when clicking outside the image or on the close button
+			document
+				.getElementById("image-modal")
+				.addEventListener("click", (event) => {
+					if (
+						event.target === document.getElementById("image-modal") ||
+						event.target.classList.contains("close-modal")
+					) {
+						closeModal();
+					}
+				});
+
+
+		</script>
+	</body>
+
+</html>

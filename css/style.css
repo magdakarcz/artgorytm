@@ -1,0 +1,1014 @@
+@font-face {
+    font-family: 'Outfit';
+    src: url('/artgorytm/assets/fonts/Outfit-VariableFont_wght.ttf') format('truetype');
+    font-style: normal;
+}
+
+body {
+	margin: 0;
+	font-family: "Outfit", sans-serif;
+	background: radial-gradient(circle, #a3e485, #ffc977);
+	color: #002c5c;
+}
+
+.navbar-placeholder {
+	height: 60px;
+	background-color: rgba(255, 255, 255, 0);
+	width: 100%;
+}
+.mobile-logo {
+    display: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.content {
+    display: flex;
+    align-items: center; /* Wyśrodkowanie w pionie */
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+}
+
+.logo {
+	margin: 20px 0;
+	margin-right: 20px;
+	margin-left: 160px;
+}
+
+.logo img {
+	max-width: 200px;
+	height: auto;
+}
+.logo a img {
+	width: 200px;
+	transition: transform 0.3s ease, filter 0.3s ease;
+}
+.logo a:hover img {
+	transform: scale(1.1);
+	filter: brightness(1.2);
+}
+
+.text {
+	flex: 1;
+	text-align: left;
+	padding-right: 20px;
+}
+
+.text h1 {
+	font-size: 3em;
+	margin-bottom: 20px;
+}
+
+.text p {
+	font-size: 1.2em;
+	line-height: 1.5;
+}
+
+.image {
+	flex: 1;
+	text-align: center;
+	position: relative;
+}
+
+.image img {
+	max-width: 85%;
+	height: auto;
+	margin-bottom: 10px;
+}
+
+.image p {
+	width: 100%;
+	max-width: 500px;
+	margin: 0 auto;
+	font-size: 0.8em;
+	color: #002c5c;
+	text-align: center;
+}
+
+.image-hero {
+    max-width: 85%;
+    height: auto;
+    margin-bottom: 10px;
+    margin-top: -45px;
+    transition: transform 2s ease-out; /* Smooth slowing down effect */
+}
+
+/* Rotating Animation on Hover */
+.image-hero:hover {
+    animation: rotate 10s linear infinite; /* Slower rotation (5s per full rotation) */
+}
+
+/* Keyframes for Rotation */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/*Center align*/
+.cta {	
+	text-align: center;
+}
+
+.cta a {
+    color: #002c5c;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.cta a:hover {
+    text-decoration: underline;
+}
+
+.cta p {
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+
+.cta-hero {	
+	text-align: center;
+}
+
+/* Buttons */
+.button {
+	background-color: #002c5c;
+	border: none;
+	border-radius: 30px;
+	padding: 15px 30px;
+	font-size: 1.2em;
+	font-weight: bold;
+	color: #fff;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+	cursor: pointer;
+	transition: transform 0.2s, box-shadow 0.2s;
+	display: inline-block;
+	text-align: center;
+	text-decoration: none;
+}
+
+.button:hover {
+	transform: scale(1.1);
+	box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.button-secondary {
+	color: rgb(255, 255, 255);
+	font-size: 18px;
+	background: rgba(255, 255, 255, 0);
+	font-family: Outfit;
+	font-weight: 700;
+	text-transform: uppercase;
+	line-height: 18px;
+	letter-spacing: 1.44px;
+	word-wrap: break-word;
+	border-radius: 49px;
+	border: 2px #002c5c solid;
+}
+
+.button-secondary:hover {
+	transform: scale(1.1);
+	box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.button-small {
+	background-color: #002c5c;
+	border: none;
+	border-radius: 30px;
+	padding: 10px 20px;
+	font-size: 1em;
+	font-weight: bold;
+	color: #fff;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+	cursor: pointer;
+	transition: transform 0.2s, box-shadow 0.2s;
+	display: inline-block;
+	text-align: center;
+	text-decoration: none;
+}
+
+.button-small:hover {
+	transform: scale(1.1);
+	box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+footer {
+	margin-top: 40px;
+	font-size: 0.9em;
+	text-align: center;
+}
+
+footer a {
+	color: #002c5c;
+	text-decoration: none;
+}
+
+footer a:hover {
+	text-decoration: underline;
+}
+
+.navcontainer {
+	display: flex;
+	align-items: center;
+}
+
+/* Navigation bar*/
+.navbar {
+	display: flex;
+	align-items: center;
+	margin-left: 230px;
+	gap: 48px;
+}
+
+.navbar a {
+	text-decoration: none;
+	color: #002c5c;
+	font-weight: 400;
+	font-family: "Outfit", sans-serif;
+	font-size: 16px;
+	position: relative;
+	transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+	color: #3d8b55;
+	text-decoration: none;
+}
+
+.navbar a::after {
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 2px;
+	background: #3d8b55;
+	left: 0;
+	bottom: -4px;
+	transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+	width: 100%;
+}
+
+/*Cards*/
+
+.card {
+	background-color: #fff;
+	/*border: 1px solid #ddd;*/
+	border-radius: 8px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	overflow: hidden;
+	text-align: center;
+	padding: 20px;
+	transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+	transform: scale(1.05);
+	box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+	object-fit: cover;
+	border-radius: 20px;
+	margin-bottom: 5px;
+}
+
+.card h3 {
+	font-size: 1.2em;
+	margin: 10px 0;
+}
+
+.card p {
+	font-size: 0.9em;
+	color: #555;
+	margin: 10px 0 20px;
+}
+
+.cardcontainer {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+	gap: 20px;
+	padding: 20px;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.cardcontainer-small {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+	gap: 20px;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: linear-gradient(45deg, #002c5c, #004080, #ffc977);
+	border-radius: 10px;
+	border: 2px solid #f4f4f4;
+}
+
+::-webkit-scrollbar-track {
+	background: #f4f4f4; /* Track color */
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #004080;
+}
+
+/* Help icon */
+.help-container {
+	position: fixed;
+	bottom: 20px;
+	right: 5px;
+	cursor: pointer;
+}
+
+.help-icon {
+	font-family: "Material Symbols Rounded";
+	font-size: 40px;
+	color: #002c5c;
+	transition: transform 0.2s ease;
+}
+
+.help-icon:hover {
+	transform: scale(1.2);
+	color: #004080;
+}
+
+/* Help box */
+.help-box {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 50%;
+	max-width: 600px;
+	background: #ffffff;
+	border: 1px solid #ddd;
+	border-radius: 12px;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+	padding: 30px;
+	display: none;
+	z-index: 100;
+	text-align: center;
+}
+
+.help-box p {
+	margin: 0 0 20px;
+	font-size: 16px;
+	color: #002c5c;
+	line-height: 1.6;
+}
+
+.close-button {
+	padding: 10px 20px;
+	background-color: #002c5c;
+	color: #ffffff;
+	border: none;
+	border-radius: 8px;
+	font-size: 14px;
+	cursor: pointer;
+	transition: background-color 0.2s ease;
+}
+
+.close-button:hover {
+	background-color: #004080;
+}
+
+/* Help text */
+.help-text {
+    cursor: pointer;
+    color: #002c5c;
+    font-size: 16px;
+    line-height: 1.6;
+    transition: color 0.2s ease;
+}
+
+.help-text:hover {
+    color: #004080;
+}
+
+.save-button {
+	display: inline-block;
+	margin: 5px 0;
+	padding: 10px 15px;
+	font-size: 14px;
+	font-weight: bold;
+	color: #ffffff;
+	background-color: #0056b3;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.save-button:hover {
+	background-color: #003d8a;
+}
+
+.save-button:active {
+	background-color: #002e66;
+	box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Login Form */
+.login-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1em;
+    margin-bottom: 5px;
+    color: #002c5c;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    border-color: #002c5c;
+    outline: none;
+}
+
+.login-form .button {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+.error-message {
+    display: none;
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+
+/* Register Form */
+.register-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.register-form .button {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+/* Style for the login/logout button */
+.login-button {
+    background-color: #002c5c;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #004080;
+    transform: scale(1.05);
+}
+
+.navbar a#login-logout-link {
+    font-weight: bold;
+    color: #3d8b55; /* Different color */
+    border: 2px solid #3d8b55; /* Add a border */
+    padding: 5px 10px; /* Add some padding */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar a#login-logout-link:hover {
+    background-color: #3d8b55; /* Change background on hover */
+    color: #fff; /* Change text color on hover */
+}
+
+#user-info {
+    margin-right: 20px; /* Add some spacing between the user info and the logout link */
+    font-weight: bold;
+    color: #3d8b55; /* Match the theme color */
+}
+
+/* Style for the logout button */
+.logout-button {
+    background-color: #c62828; /* Red color for logout */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+    transform: scale(1.05);
+}
+
+/* Dodatkowe style dla podstrony "O aplikacji" */
+/* Dodatkowe style dla podstrony "O aplikacji" */
+.about-hero {
+    background: linear-gradient(135deg, #a3e485, #ffc977);
+    padding: 60px 20px;
+    border-radius: 20px;
+    margin-top: 40px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.about-goal {
+    background: linear-gradient(135deg, #ffc977, #a3e485);
+    padding: 60px 20px;
+    border-radius: 20px;
+    margin-top: 40px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.about-tech {
+    background: linear-gradient(135deg, #a3e485, #ffc977);
+    padding: 60px 20px;
+    border-radius: 20px;
+    margin-top: 40px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.about-text {
+    flex: 1;
+    text-align: left;
+    padding-right: 40px;
+}
+
+.about-text h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #002c5c;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.about-text p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #002c5c;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.about-image {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    animation: slideIn 1s ease-in-out;
+}
+
+.about-image img {
+    max-width: 85%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.about-image p {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    font-size: 0.9em;
+    color: #002c5c;
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Animacje */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.animated-image {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Gallery Container */
+#gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center cards horizontally */
+    gap: 20px;
+    padding: 20px;
+    margin: 0 auto; /* Center the container itself */
+    max-width: 1200px; /* Optional: Limit the maximum width of the gallery */
+}
+
+/* Image Card */
+.image-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 300px;
+    text-align: center;
+	cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.image-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.image-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.image-card h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.image-card p {
+    font-size: 0.9em;
+    color: #666;
+}
+
+#image-modal {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.8);
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+}
+
+#image-modal.active {
+	display: flex;
+}
+
+.modal-content {
+	background: #fff;
+	padding: 20px;
+	border-radius: 10px;
+	max-width: 45%;
+	max-height: 80%;
+	overflow: auto;
+	text-align: center;
+}
+
+.modal-content img {
+	max-width: 100%;
+	max-height: 650px;
+	border-radius: 8px;
+}
+
+.modal-content h3 {
+	margin: 15px 0 10px;
+	font-size: 1.5em;
+	color: #333;
+}
+
+.modal-content p {
+	font-size: 1em;
+	color: #666;
+}
+
+.modal-content strong {
+    color: #333;
+}
+
+.close-modal {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	font-size: 30px;
+	color: #fff;
+	cursor: pointer;
+}
+
+/* Hide the menu by default */
+#menu-items {
+	display: none;
+  }
+  
+  /* Show the menu when visible */
+  #menu-items.menu-visible {
+	display: block;
+  }
+  
+  /* Basic styling for the menu */
+  #mobile-navbar {
+	background-color: #002c5c;
+	color: white;
+	padding: 10px;
+  }
+  
+  #menu-items a {
+	display: block;
+	color: white;
+	padding: 8px;
+	text-decoration: none;
+  }
+  
+  #menu-items a:hover {
+	background-color: #004080;
+  }
+  
+  @media (min-width: 768px) {
+	#mobile-navbar {
+	  display: none;
+	}
+  }
+  
+/* Mobile-specific styles */
+@media (max-width: 767px) {
+    body {
+        font-size: 16px; /* Większa czytelność na małych ekranach */
+        background: radial-gradient(circle, #a3e485, #ffc977); /* Zachowaj gradient */
+    }
+
+    .container {
+        padding: 10px; /* Mniejszy padding na mobilnych */
+        margin-bottom: 20px; /* Mniejszy margines na mobilnych */
+    }
+
+    .content {
+        flex-direction: column; /* Układ kolumnowy na mobilnych */
+        margin-top: 20px; /* Mniejszy margines na mobilnych */
+    }
+
+    .text {
+        text-align: center; /* Wyśrodkuj tekst na mobilnych */
+        padding-right: 0; /* Usuń padding na mobilnych */
+    }
+
+    .text h1 {
+        font-size: 2em; /* Mniejszy rozmiar nagłówka na mobilnych */
+        margin-bottom: 15px; /* Mniejszy margines na mobilnych */
+    }
+
+    .text p {
+        font-size: 1em; /* Mniejszy rozmiar tekstu na mobilnych */
+        line-height: 1.4; /* Lepsza czytelność na mobilnych */
+    }
+
+    .image {
+        margin-top: 20px; /* Dodaj margines na mobilnych */
+    }
+
+    .image img {
+        max-width: 100%; /* Pełna szerokość obrazów na mobilnych */
+    }
+
+    .image-hero {
+        margin-top: 0; /* Usuń negatywny margines na mobilnych */
+    }
+
+    .cta p {
+        font-size: 18px; /* Mniejszy rozmiar tekstu na mobilnych */
+    }
+
+    .button {
+        font-size: 1em; /* Mniejszy rozmiar przycisków na mobilnych */
+        padding: 12px 24px; /* Mniejszy padding przycisków na mobilnych */
+    }
+
+    .cardcontainer, .cardcontainer-small {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Mniejsza szerokość kart na mobilnych */
+    }
+
+    .navbar {
+        display: none; /* Ukryj zwykły navbar na mobilnych */
+    }
+
+    #mobile-navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #002c5c;
+        padding: 10px;
+    }
+
+    .mobile-logo {
+        display: flex;
+        align-items: center;
+    }
+
+    .mobile-logo img {
+        max-width: 150px;
+        height: auto;
+    }
+
+    .menu-button {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    /* Ukryj główne logo na widoku mobilnym */
+    .header .logo {
+        display: none;
+    }
+
+    .help-box {
+        width: 90%; /* Szerszy help-box na mobilnych */
+        max-width: none; /* Usuń maksymalną szerokość na mobilnych */
+    }
+
+    .about-content {
+        flex-direction: column; /* Układ kolumnowy na mobilnych */
+    }
+
+    .about-text {
+        padding-right: 0; /* Usuń padding na mobilnych */
+        text-align: center; /* Wyśrodkuj tekst na mobilnych */
+    }
+
+    .about-text h1 {
+        font-size: 2em; /* Mniejszy rozmiar nagłówka na mobilnych */
+    }
+
+    .about-text p {
+        font-size: 1em; /* Mniejszy rozmiar tekstu na mobilnych */
+    }
+
+    .about-image img {
+        max-width: 100%; /* Pełna szerokość obrazów na mobilnych */
+    }
+
+    #gallery-container {
+        padding: 10px; /* Mniejszy padding na mobilnych */
+    }
+
+    .image-card {
+        width: 100%; /* Pełna szerokość kart na mobilnych */
+    }
+
+    .modal-content {
+        max-width: 90%; /* Szerszy modal na mobilnych */
+        max-height: 90%; /* Wyższy modal na mobilnych */
+    }
+
+    .modal-content img {
+        max-height: 300px; /* Mniejsza wysokość obrazu w modalach na mobilnych */
+    }
+
+    .close-modal {
+        top: 10px; /* Dostosuj pozycję przycisku zamykania na mobilnych */
+        right: 10px;
+    }
+    .cardcontainer-small {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 15px;
+        padding-bottom: 10px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .cardcontainer-small .card {
+        flex: 0 0 auto;
+        width: 60%;
+        scroll-snap-align: start;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 20px;
+        background-color: #fff;
+    }
+
+    /* Ukryj scrollbar na niektórych przeglądarkach */
+    .cardcontainer-small::-webkit-scrollbar {
+        display: none;
+    }
+
+    .cardcontainer-small {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    /* Płynne przewijanie kart */
+    .cardcontainer-small {
+        scroll-behavior: smooth;
+    }
+}
+
+/* Extra small devices (phones, 480px and below) */
+@media (max-width: 480px) {
+    .text h1 {
+        font-size: 1.5em; /* Jeszcze mniejszy nagłówek na bardzo małych ekranach */
+    }
+
+    .text p {
+        font-size: 0.9em; /* Jeszcze mniejszy tekst na bardzo małych ekranach */
+    }
+
+    .button {
+        font-size: 0.9em; /* Jeszcze mniejsze przyciski na bardzo małych ekranach */
+        padding: 10px 20px; /* Dostosuj padding na bardzo małych ekranach */
+    }
+
+    .navbar a {
+        font-size: 12px; /* Jeszcze mniejsza czcionka w nawigacji na bardzo małych ekranach */
+    }
+
+    .modal-content img {
+        max-height: 200px; /* Jeszcze mniejsza wysokość obrazu w modalach na bardzo małych ekranach */
+    }
+}

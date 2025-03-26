@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/artgorytm/css/style.css">
+    <script src="/artgorytm/js/navbar.js"></script>
+    <title>sztuka algorytmiczna</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,300,0,0&icon_names=help" />
+</head>
+<body>
+    <div id="navbar-container"></div>
+    <nav id="mobile-navbar">
+        <div class="mobile-logo">
+            <a href="https://us.edu.pl/">
+                <img src="/artgorytm/assets/images/us_mobile.png" alt="Logo">
+            </a>
+        </div>
+        <button id="menu-toggle" class="menu-button">☰</button>
+        <div id="menu-items" class="menu-hidden">
+            <a href="/artgorytm/index.html">STRONA GŁÓWNA</a>
+            <a href="/artgorytm/html/about.html">O APLIKACJI</a>
+            <a href="/artgorytm/html/my_gallery.html">MOJA GALERIA</a>
+            <a href="/artgorytm/html/edytor.html">EDYTOR</a>
+            <a id="login-logout-link" href="/artgorytm/html/login.html">ZALOGUJ SIĘ</a>
+        </div>
+    </nav>
+    <div class="cardcontainer">
+        <div class="card">
+            <img src="/artgorytm/assets/images/dynamics.png" alt="Dynamics" style="width:200px;height:100px;">
+            <h3>UKŁADY DYNAMICZNE</h3>
+            <p>Odkryj niezwykłe wzory tworzone przez matematykę! Kliknij i wygeneruj unikalne, symetryczne obrazy powstające z ruchu punktów według określonych równań.</p>
+            <a href="/artgorytm/html/patterns/dynamics/index.html" class="button-small">Wersja klasyczna</a>
+            <a href="/artgorytm/html/patterns/dynamics_aa/index.html" class="button-small">Wersja AntyAliasing</a>
+        </div>
+    
+        <div class="card">
+            <img src="/artgorytm/assets/images/julia.png" alt="Julia set" style="width:200px;height:100px;">
+            <h3>ZBIORY JULII</h3>
+            <p>Stwórz niesamowite, symetryczne obrazki pełne skomplikowanych kształtów! Te magiczne wzory powstają dzięki specjalnym matematycznym równaniom.</p>
+            <a href="/artgorytm/html/patterns/julia/index.html" class="button-small">Wersja klasyczna</a>
+            <a href="/artgorytm/html/patterns/julia_aa/index.html" class="button-small">Wersja AntyAliasing</a>
+        </div>
+    
+        <div class="card">
+            <img src="/artgorytm/assets/images/mandelbrot.png" alt="Mandelbrot set" style="width:200px;height:100px;">
+            <h3>ZBIORY MANDELBROTA</h3>
+            <p>Zanurz się w nieskończonym świecie fraktali! Te niezwykłe obrazki przypominają wszechświat pełen szczegółów – im bardziej powiększasz, tym więcej widzisz!</p>
+            <a href="/artgorytm/html/patterns/mandelbrot/index.html" class="button-small">Wersja klasyczna</a>
+            <a href="/artgorytm/html/patterns/mandelbrot_aa/index.html" class="button-small">Wersja AntyAliasing</a>
+        </div>
+    
+        <div class="card">
+            <img src="/artgorytm/assets/images/rootf.png" alt="Root finding" style="width:200px;height:100px;">
+            <h3>METODA WIELOMIANOGRAFU</h3>
+            <p>
+                Zanurz się w świecie algorytmicznej sztuki! Sprawdź, jak liczby prowadzą nas do ukrytych pierwiastków wielomianu,
+                tworząc piękne i zaskakujące kolorowe obrazy.
+            </p>
+            <a href="/artgorytm/html/patterns/root-finding/index.html" class="button-small">Wersja klasyczna</a>
+            <a href="/artgorytm/html/patterns/root-finding_aa/index.html" class="button-small">Wersja AntyAliasing</a>
+        </div>
+    </div>
+
+    <div class="help-container">
+        <span class="help-text" data-help="1">Czym jest<br><b>AntyAliasing?</b></span>
+        <span class="material-symbols-rounded help-icon" data-help="1">help</span>
+    </div>
+    <div class="help-box" data-help-box="1">
+        <p>Antyaliasing (AA) to technika stosowana w grafice komputerowej w celu wygładzania krawędzi obiektów,
+            które wyglądają na postrzępione lub "schodkowe" na ekranie. Działa to poprzez wprowadzenie subpikseli wokół krawędzi obiektów,
+            aby zredukować te "schodki",
+            co daje efekt bardziej płynnych, zaokrąglonych linii i krawędzi. Antyaliasing
+            wprowadza w pikselach kolory pośrednie między tłem a krawędzią, dzięki czemu krawędzie stają się mniej zauważalne.
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Black_qcircle_noaa_4x.png">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Black_qcircle_aa_4x.png">
+            <br>Bez AntyAliasingu&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Z Antyaliasingiem
+        </p>
+        <button class="close-button" data-help-close="1">Zamknij</button>
+    </div>
+    <script src="/artgorytm/js/script.js"></script>
+</body>
+</html>

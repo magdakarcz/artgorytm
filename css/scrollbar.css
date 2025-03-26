@@ -1,0 +1,19 @@
+::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+    height: 10px; /* Height of the scrollbar (for horizontal scrollbars) */
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #002C5C, #004080, #2160a0);
+    border-radius: 10px;
+    border: 2px solid #f4f4f4;
+}
+
+::-webkit-scrollbar-track {
+    background: #f4f4f4; /* Track color */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #004080; /* Darker color on hover */
+}
